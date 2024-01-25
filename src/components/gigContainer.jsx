@@ -14,14 +14,17 @@ const GigList = () => {
 
     const [favoritedGigs, setFavoritedGigs] = useState([]);
     
+
+    // Create a list with all gigs and their states, if a user click like, this function will be triggered and will change the state of that gig inside of the list
     const toggleFavorite = (gigId) => {
         const updatedGigs = gigs.map((gig) =>
             gig.id === gigId ? { ...gig, isFavorited: !gig.isFavorited } : gig
         );
 
+        //tells React to update the state of each gig, triggering a re-render of the component with the modified gigs array.
         setGigs(updatedGigs);
 
-        // Update the list of favorited gigs
+        // filter updatedGigs to create a new array with only favourited gigs
     const updatedFavoritedGigs = updatedGigs.filter((gig) => gig.isFavorited);
     setFavoritedGigs(updatedFavoritedGigs);
     };
