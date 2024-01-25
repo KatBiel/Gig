@@ -1,14 +1,7 @@
 import React, { useState } from "react";
-import FavoriteButton from "./favouriteButton";
-import "./favoriteButton.css";
+import './Gig.css';
 
-const Gig = ({ name, imageSrc, description, dateTime, location, isFa}) => {
-    const [favorited, setFavorited] = useState(false);
-
-    const toggleFavorite = () => {
-        setFavorited(!favorited);
-};
-
+const Gig = ({ name, imageSrc, description, dateTime, location, isFavorited, onToggleFavorite }) => {
     return (
     <div className="gig-container">
         <div className="gig">
@@ -17,7 +10,9 @@ const Gig = ({ name, imageSrc, description, dateTime, location, isFa}) => {
             <p className="event-description">{description}</p>
             <p className="event-date-time">{dateTime}</p>
             <p className="event-location">{location}</p>
-            <FavoriteButton favorited={favorited} toggleFavorite={toggleFavorite} />
+            <button className={`favorite-button ${isFavorited ? 'favorited' : ''}`} onClick={onToggleFavorite}>
+                    <span className={`heart ${isFavorited ? 'favorited-heart' : ''}`}>&#10084;</span>
+                </button>
         </div>
     </div>
     );
@@ -26,3 +21,4 @@ const Gig = ({ name, imageSrc, description, dateTime, location, isFa}) => {
 export default Gig;
 
 
+{/* <FavoriteButton favorited={isFavorited} toggleFavorite={onToggleFavorite} /> */}

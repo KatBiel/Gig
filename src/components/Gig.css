@@ -50,3 +50,7 @@ body, html {
   color: #777;
   margin-bottom: 5px;
 }
+
+.favorited-heart {
+  color: red; /* added when a heart is clicked */
+}

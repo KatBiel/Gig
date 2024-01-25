@@ -1,46 +1,50 @@
 import React from 'react';
-import Gig from './components/Gig';
+import GigList from './components/gigContainer';
 import './App.css';
-import Carbons from './assets/Carbons.png'
-import Undercover from './assets/Undercover-hippie.avif'
-import Shpongle from './assets/shpongle.jpeg'
-// import ClickListener from './components/ClickListener';
-// import InputLog from './components/InputLog';
-// import Die from './components/Die';
 
+
+function App() {
+    return (
+      <div className="App">
+        <GigList />
+      </div>
+  );
+}
+
+export default App;
 
 // In this version, the data is hardcoded directly within the App component. 
 //This approach is suitable when the data is static, and you don't need to dynamically change the content of the Gig component based on external factors.
 
-const App = () => {
-  return (
-      <>
-      <Gig
-        name="Carbon Basen Lifeforms"
-        imageSrc={Carbons} 
-        description="Doors open: 19:30."
-        dateTime="Friday 05 April 2024, 19:30"
-        location="London"
-      />
-      <Gig
-        name="Undercover Hippie"
-        imageSrc={Undercover}
-        description="Doors open: 19:30."
-        dateTime="Wednesday 10 April 2024, 19:30"
-        location="London"
-      />
-      <Gig
-        name="Shpongle"
-        imageSrc={Shpongle}
-        description="Doors open: 18:00."
-        dateTime="Friday 18 April 2024, 19:00"
-        location="London"
-      />
+// const App = () => {
+//   return (
+//       <>
+//       <Gig
+//         name="Carbon Basen Lifeforms"
+//         imageSrc={Carbons} 
+//         description="Doors open: 19:30."
+//         dateTime="Friday 05 April 2024, 19:30"
+//         location="London"
+//       />
+//       <Gig
+//         name="Undercover Hippie"
+//         imageSrc={Undercover}
+//         description="Doors open: 19:30."
+//         dateTime="Wednesday 10 April 2024, 19:30"
+//         location="London"
+//       />
+//       <Gig
+//         name="Shpongle"
+//         imageSrc={Shpongle}
+//         description="Doors open: 18:00."
+//         dateTime="Friday 18 April 2024, 19:00"
+//         location="London"
+//       />
 
-    </>)
-};
+//     </>)
+// };
 
-export default App;
+// export default App;
 
 
 // In this version, the data is stored in a separate object (gigData) before being passed to the Gig component. 
