@@ -12,6 +12,8 @@ const GigList = () => {
         { id: 3, name: 'Shpongle', imageSrc: Shpongle , description: 'Doors open: 18:00.', dateTime: 'Friday 18 April 2024, 19:00', location: 'London' }
         ]);
 
+
+    // This state variable favoritedGigs is an array that holds the gigs marked as favorites. The isFavorited property is used to determine whether a specific gig should be included in this array.    
     const [favoritedGigs, setFavoritedGigs] = useState([]);
     
 
